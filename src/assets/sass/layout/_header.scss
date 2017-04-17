@@ -19,6 +19,8 @@
 a.portfolio-link {
     position: absolute;
     bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
     border-bottom: 0;
 
     &:hover { margin-bottom: none; }

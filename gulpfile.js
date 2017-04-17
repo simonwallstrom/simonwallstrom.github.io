@@ -66,10 +66,10 @@ var prod = {
 };
 
 // Deploy
-var deploy = {
-    path: basePath.prod + '**/*.*',
-    branch: "gh-pages"
-};
+// var ghDeploy = {
+//     path: basePath.prod + '**/*.*',
+//     branch: "master"
+// };
 
 // Error handling
 var handleError = function(err) {
@@ -305,10 +305,10 @@ gulp.task('prod', ['cleanProd'], function (cb) {
 
 gulp.task('deploy', function() {
 
-    // var options = {
-    //     branch: "master"
-    // };
+    var options = {
+        branch: "master"
+    };
 
-    return gulp.src(deploy.path)
-        .pipe(ghPages(deploy.branch));
+    return gulp.src('./prod/**/*')
+        .pipe(ghPages(options));
 });
